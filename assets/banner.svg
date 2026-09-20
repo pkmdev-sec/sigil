@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" width="1500" height="500">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050508"/>
+      <stop offset="50%" stop-color="#0a0a12"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <!-- Purple gradient (diagonal) -->
+    <linearGradient id="purpleGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#bc8cff"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <!-- Purple gradient (vertical) -->
+    <linearGradient id="purpleGradV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#bc8cff"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <!-- Purple gradient (horizontal) -->
+    <linearGradient id="purpleGradH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#bc8cff"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <!-- Cyan accent gradient -->
+    <linearGradient id="cyanGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.2"/>
+    </linearGradient>
+    <!-- Inner glow radial -->
+    <radialGradient id="innerGlow" cx="0.5" cy="0.5" r="0.35">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#bc8cff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#bc8cff" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Logo glow -->
+    <radialGradient id="logoGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#bc8cff" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#7c3aed" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Circle container gradient -->
+    <radialGradient id="circleGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="80%" stop-color="#0a0a0a" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0.5"/>
+    </radialGradient>
+    <!-- Sigil glow filter -->
+    <filter id="sigilGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Outer glow filter (larger) -->
+    <filter id="outerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Title glow filter -->
+    <filter id="titleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1500" height="500" fill="url(#bg)"/>
+
+  <!-- Border frame -->
+  <rect x="8" y="8" width="1484" height="484" rx="12" ry="12" fill="none" stroke="#21262d" stroke-width="1"/>
+  <rect x="12" y="12" width="1476" height="476" rx="10" ry="10" fill="none" stroke="#1a1a2e" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- === LEFT SIDE: Enhanced Logo === -->
+
+  <!-- Background glow behind entire symbol -->
+  <circle cx="300" cy="250" r="220" fill="url(#logoGlow)" filter="url(#outerGlow)" opacity="0.5"/>
+
+  <!-- Circular container - TWO rings -->
+  <circle cx="300" cy="250" r="185" fill="url(#circleGrad)"/>
+  <!-- Outer ring (subtle) -->
+  <circle cx="300" cy="250" r="185" fill="none" stroke="#bc8cff" stroke-width="1" opacity="0.15"/>
+  <!-- Inner ring (bright) -->
+  <circle cx="300" cy="250" r="175" fill="none" stroke="#bc8cff" stroke-width="1.8" opacity="0.35"/>
+
+  <!-- Sigil glow field -->
+  <circle cx="300" cy="250" r="120" fill="url(#innerGlow)"/>
+
+  <g filter="url(#sigilGlow)">
+    <!-- === Outer octagon frame === -->
+    <polygon points="300,120 384,152 416,236 416,264 384,348 300,380 216,348 184,264 184,236 216,152"
+             fill="none" stroke="url(#purpleGrad)" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- Small dots at octagon vertices -->
+    <circle cx="300" cy="120" r="3" fill="#bc8cff" opacity="0.7"/>
+    <circle cx="384" cy="152" r="3" fill="#bc8cff" opacity="0.6"/>
+    <circle cx="416" cy="236" r="3" fill="#9c6cef" opacity="0.6"/>
+    <circle cx="416" cy="264" r="3" fill="#9c6cef" opacity="0.6"/>
+    <circle cx="384" cy="348" r="3" fill="#7c3aed" opacity="0.6"/>
+    <circle cx="300" cy="380" r="3" fill="#7c3aed" opacity="0.7"/>
+    <circle cx="216" cy="348" r="3" fill="#7c3aed" opacity="0.6"/>
+    <circle cx="184" cy="264" r="3" fill="#9c6cef" opacity="0.6"/>
+    <circle cx="184" cy="236" r="3" fill="#9c6cef" opacity="0.6"/>
+    <circle cx="216" cy="152" r="3" fill="#bc8cff" opacity="0.6"/>
+
+    <!-- === Inner rotating square (45 degrees offset) === -->
+    <rect x="245" y="195" width="110" height="110" rx="2" ry="2"
+          transform="rotate(45 300 250)"
+          fill="none" stroke="url(#purpleGradV)" stroke-width="2" opacity="0.5"/>
+
+    <!-- === Central diamond with inner glow === -->
+    <path d="M 300 155 L 370 250 L 300 345 L 230 250 Z"
+          fill="url(#purpleGrad)" fill-opacity="0.08" stroke="url(#purpleGradV)" stroke-width="2.5" opacity="0.9"/>
+
+    <!-- Inner diamond (smaller, brighter) -->
+    <path d="M 300 190 L 348 250 L 300 310 L 252 250 Z"
+          fill="url(#purpleGrad)" fill-opacity="0.12" stroke="url(#purpleGrad)" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- === 4 Cardinal lines (compass rose) === -->
+    <!-- North -->
+    <line x1="300" y1="130" x2="300" y2="195" stroke="url(#purpleGradV)" stroke-width="2" opacity="0.7" stroke-linecap="round"/>
+    <!-- South -->
+    <line x1="300" y1="305" x2="300" y2="370" stroke="url(#purpleGradV)" stroke-width="2" opacity="0.7" stroke-linecap="round"/>
+    <!-- West -->
+    <line x1="195" y1="250" x2="130" y2="250" stroke="url(#purpleGradH)" stroke-width="2" opacity="0.7" stroke-linecap="round"/>
+    <!-- East -->
+    <line x1="370" y1="250" x2="405" y2="250" stroke="url(#purpleGradH)" stroke-width="2" opacity="0.7" stroke-linecap="round"/>
+
+    <!-- === Connecting lines: inner diamond → octagon === -->
+    <!-- Top-left -->
+    <line x1="252" y1="210" x2="216" y2="152" stroke="#22d3ee" stroke-width="0.8" opacity="0.3"/>
+    <!-- Top-right -->
+    <line x1="348" y1="210" x2="384" y2="152" stroke="#22d3ee" stroke-width="0.8" opacity="0.3"/>
+    <!-- Bottom-left -->
+    <line x1="252" y1="290" x2="216" y2="348" stroke="#22d3ee" stroke-width="0.8" opacity="0.3"/>
+    <!-- Bottom-right -->
+    <line x1="348" y1="290" x2="384" y2="348" stroke="#22d3ee" stroke-width="0.8" opacity="0.3"/>
+
+    <!-- === Horizontal bars (original feature, enhanced) === -->
+    <line x1="238" y1="200" x2="362" y2="200" stroke="url(#purpleGrad)" stroke-width="2" opacity="0.7" stroke-linecap="round"/>
+    <line x1="220" y1="250" x2="380" y2="250" stroke="url(#purpleGrad)" stroke-width="2.5" opacity="0.8" stroke-linecap="round"/>
+    <line x1="238" y1="300" x2="362" y2="300" stroke="url(#purpleGrad)" stroke-width="2" opacity="0.7" stroke-linecap="round"/>
+
+    <!-- === Diagonal cross elements with cyan accents === -->
+    <line x1="242" y1="185" x2="300" y2="250" stroke="#22d3ee" stroke-width="1" opacity="0.35"/>
+    <line x1="358" y1="185" x2="300" y2="250" stroke="#22d3ee" stroke-width="1" opacity="0.35"/>
+    <line x1="242" y1="315" x2="300" y2="250" stroke="#22d3ee" stroke-width="1" opacity="0.35"/>
+    <line x1="358" y1="315" x2="300" y2="250" stroke="#22d3ee" stroke-width="1" opacity="0.35"/>
+
+    <!-- === Central focal point (enhanced) === -->
+    <circle cx="300" cy="250" r="22" fill="none" stroke="url(#purpleGrad)" stroke-width="2" opacity="0.7"/>
+    <circle cx="300" cy="250" r="14" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.4"/>
+    <circle cx="300" cy="250" r="8" fill="url(#purpleGrad)" opacity="0.7"/>
+    <circle cx="300" cy="250" r="4" fill="#ffffff" opacity="0.3"/>
+
+    <!-- === Accent dots at bar-diamond intersections === -->
+    <circle cx="265" cy="200" r="2.5" fill="#bc8cff" opacity="0.6"/>
+    <circle cx="335" cy="200" r="2.5" fill="#bc8cff" opacity="0.6"/>
+    <circle cx="265" cy="300" r="2.5" fill="#7c3aed" opacity="0.6"/>
+    <circle cx="335" cy="300" r="2.5" fill="#7c3aed" opacity="0.6"/>
+
+    <!-- === Diamond vertex accent dots === -->
+    <circle cx="300" cy="155" r="4.5" fill="#bc8cff" opacity="0.8"/>
+    <circle cx="370" cy="250" r="4.5" fill="#9c6cef" opacity="0.7"/>
+    <circle cx="300" cy="345" r="4.5" fill="#7c3aed" opacity="0.8"/>
+    <circle cx="230" cy="250" r="4.5" fill="#9c6cef" opacity="0.7"/>
+  </g>
+
+  <!-- Outer decorative arcs -->
+  <path d="M 175 250 A 125 125 0 0 1 300 125" fill="none" stroke="#bc8cff" stroke-width="0.8" opacity="0.12"/>
+  <path d="M 425 250 A 125 125 0 0 1 300 375" fill="none" stroke="#7c3aed" stroke-width="0.8" opacity="0.12"/>
+  <path d="M 300 125 A 125 125 0 0 1 425 250" fill="none" stroke="#bc8cff" stroke-width="0.8" opacity="0.08"/>
+  <path d="M 300 375 A 125 125 0 0 1 175 250" fill="none" stroke="#7c3aed" stroke-width="0.8" opacity="0.08"/>
+
+  <!-- === RIGHT SIDE: Text === -->
+
+  <!-- Title -->
+  <text x="620" y="230" font-family="system-ui, -apple-system, sans-serif" font-size="96" font-weight="800" fill="#bc8cff" filter="url(#titleGlow)">SIGIL</text>
+
+  <!-- Subtitle -->
+  <text x="625" y="280" font-family="'SF Mono', 'Fira Code', monospace" font-size="28" fill="#8b949e" letter-spacing="8">PROMPT INTELLIGENCE</text>
+
+  <!-- Tagline -->
+  <text x="625" y="320" font-family="'SF Mono', 'Fira Code', monospace" font-size="18" fill="#6e7681">cache-optimized prompts / model variants / gate-aware A/B testing</text>
+
+  <!-- Decorative line -->
+  <line x1="620" y1="340" x2="1100" y2="340" stroke="#21262d" stroke-width="0.5"/>
+
+  <!-- Version badge -->
+  <rect x="625" y="355" width="62" height="28" rx="14" fill="transparent" stroke="#bc8cff" stroke-width="1.2" opacity="0.6"/>
+  <text x="656" y="374" font-family="'SF Mono', 'Fira Code', monospace" font-size="14" fill="#bc8cff" text-anchor="middle" opacity="0.8">v1.0</text>
+</svg>

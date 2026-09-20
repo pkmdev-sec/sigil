@@ -1,0 +1,25 @@
+{
+  "name": "code-review-suite",
+  "description": "Coordinated code review with researcher, reviewer, and summarizer",
+  "version": "1.0.0",
+  "roles": {
+    "researcher": {
+      "template": "templates/research-context.md",
+      "model": "haiku",
+      "tools": ["Read", "Grep", "Glob"],
+      "instructions": "Gather context about the codebase. Identify patterns, dependencies, and potential areas of concern. Pass findings to reviewer."
+    },
+    "reviewer": {
+      "template": "templates/code-review.md",
+      "model": "opus",
+      "tools": ["Read", "Grep", "Glob", "Edit"],
+      "instructions": "Perform deep code review using researcher's findings. Check for bugs, security issues, performance problems, and style violations."
+    },
+    "summarizer": {
+      "template": "templates/documentation.md",
+      "model": "sonnet",
+      "tools": ["Write"],
+      "instructions": "Summarize reviewer's findings into actionable items with priority levels and suggested fixes."
+    }
+  }
+}

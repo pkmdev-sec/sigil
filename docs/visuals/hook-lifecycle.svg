@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600">
+  <defs>
+    <marker id="hl-a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#8b949e"/>
+    </marker>
+    <marker id="hl-ag" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#3fb950"/>
+    </marker>
+  </defs>
+
+  <!-- Background: PITCH BLACK -->
+  <rect width="1000" height="600" fill="#000000"/>
+
+  <!-- Title -->
+  <text x="500" y="35" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Claude Code Hook Lifecycle</text>
+  <text x="500" y="55" font-family="system-ui, sans-serif" font-size="13" fill="#8b949e" text-anchor="middle">Event Timeline with Sigil Injection Points</text>
+
+  <!-- Main timeline line -->
+  <line x1="60" y1="250" x2="940" y2="250" stroke="#8b949e" stroke-width="2" opacity="0.4"/>
+
+  <!-- ===== EVENT 1: SessionStart ===== -->
+  <circle cx="90" cy="250" r="8" fill="#58a6ff" stroke="#58a6ff" stroke-width="2"/>
+  <rect x="50" y="270" width="80" height="50" rx="6" fill="#58a6ff" fill-opacity="0.06" stroke="#58a6ff" stroke-width="1"/>
+  <text x="90" y="291" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">Session</text>
+  <text x="90" y="305" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">Start</text>
+  <!-- Arrow to next -->
+  <line x1="98" y1="250" x2="192" y2="250" stroke="#8b949e" stroke-width="1.5" marker-end="url(#hl-a)"/>
+
+  <!-- ===== EVENT 2: UserPromptSubmit ===== -->
+  <circle cx="210" cy="250" r="8" fill="#3fb950" stroke="#3fb950" stroke-width="2"/>
+  <!-- SIGIL INJECTION POINT marker -->
+  <circle cx="210" cy="250" r="14" fill="none" stroke="#3fb950" stroke-width="2" stroke-dasharray="4,2"/>
+  <rect x="155" y="270" width="110" height="62" rx="6" fill="#3fb950" fill-opacity="0.08" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="210" y="289" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">UserPrompt</text>
+  <text x="210" y="303" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">Submit</text>
+  <text x="210" y="322" font-family="system-ui, sans-serif" font-size="8" fill="#3fb950" text-anchor="middle">SIGIL INJECT</text>
+  <!-- Injection detail arrow pointing up -->
+  <line x1="210" y1="236" x2="210" y2="155" stroke="#3fb950" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="130" y="105" width="160" height="48" rx="6" fill="#3fb950" fill-opacity="0.1" stroke="#3fb950" stroke-width="1"/>
+  <text x="210" y="124" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#3fb950" text-anchor="middle">prompt-studio-inject.py</text>
+  <text x="210" y="142" font-family="system-ui, sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Transforms prompt via hook</text>
+  <!-- Arrow to next -->
+  <line x1="225" y1="250" x2="342" y2="250" stroke="#8b949e" stroke-width="1.5" marker-end="url(#hl-a)"/>
+
+  <!-- ===== EVENT 3: PreToolUse ===== -->
+  <circle cx="360" cy="250" r="8" fill="#d29922" stroke="#d29922" stroke-width="2"/>
+  <rect x="315" y="270" width="90" height="50" rx="6" fill="#d29922" fill-opacity="0.06" stroke="#d29922" stroke-width="1"/>
+  <text x="360" y="291" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">PreTool</text>
+  <text x="360" y="305" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">Use</text>
+  <!-- Arrow to next -->
+  <line x1="375" y1="250" x2="442" y2="250" stroke="#8b949e" stroke-width="1.5" marker-end="url(#hl-a)"/>
+
+  <!-- ===== EVENT 4: Tool Execution (special box) ===== -->
+  <rect x="448" y="228" width="120" height="44" rx="8" fill="#bc8cff" fill-opacity="0.08" stroke="#bc8cff" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="508" y="255" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" fill="#bc8cff" text-anchor="middle">Tool Execution</text>
+  <!-- Arrow to next -->
+  <line x1="568" y1="250" x2="632" y2="250" stroke="#8b949e" stroke-width="1.5" marker-end="url(#hl-a)"/>
+
+  <!-- ===== EVENT 5: PostToolUse ===== -->
+  <circle cx="650" cy="250" r="8" fill="#d29922" stroke="#d29922" stroke-width="2"/>
+  <rect x="605" y="270" width="90" height="50" rx="6" fill="#d29922" fill-opacity="0.06" stroke="#d29922" stroke-width="1"/>
+  <text x="650" y="291" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">PostTool</text>
+  <text x="650" y="305" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">Use</text>
+  <!-- Arrow to next -->
+  <line x1="665" y1="250" x2="752" y2="250" stroke="#8b949e" stroke-width="1.5" marker-end="url(#hl-a)"/>
+
+  <!-- ===== EVENT 6: Stop ===== -->
+  <circle cx="770" cy="250" r="8" fill="#f85149" stroke="#f85149" stroke-width="2"/>
+  <rect x="740" y="270" width="60" height="50" rx="6" fill="#f85149" fill-opacity="0.06" stroke="#f85149" stroke-width="1"/>
+  <text x="770" y="300" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">Stop</text>
+  <!-- Arrow to next -->
+  <line x1="785" y1="250" x2="872" y2="250" stroke="#8b949e" stroke-width="1.5" marker-end="url(#hl-a)"/>
+
+  <!-- ===== EVENT 7: SessionEnd ===== -->
+  <circle cx="890" cy="250" r="8" fill="#58a6ff" stroke="#58a6ff" stroke-width="2"/>
+  <rect x="850" y="270" width="80" height="50" rx="6" fill="#58a6ff" fill-opacity="0.06" stroke="#58a6ff" stroke-width="1"/>
+  <text x="890" y="291" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">Session</text>
+  <text x="890" y="305" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">End</text>
+
+  <!-- ===== BRANCH: PreCompact ===== -->
+  <!-- Branch line going down from between PostToolUse and Stop -->
+  <line x1="710" y1="250" x2="710" y2="400" stroke="#d29922" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <circle cx="710" cy="250" r="4" fill="#d29922"/>
+  <rect x="665" y="400" width="90" height="50" rx="6" fill="#d29922" fill-opacity="0.06" stroke="#d29922" stroke-width="1"/>
+  <text x="710" y="421" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">Pre</text>
+  <text x="710" y="435" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" fill="#ffffff" text-anchor="middle">Compact</text>
+  <text x="710" y="470" font-family="system-ui, sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">Fires before context</text>
+  <text x="710" y="483" font-family="system-ui, sans-serif" font-size="9" fill="#8b949e" text-anchor="middle">compression</text>
+
+  <!-- ===== Loop indicator (PreToolUse ↔ PostToolUse repeats) ===== -->
+  <path d="M 360,228 C 360,190 650,190 650,228" fill="none" stroke="#8b949e" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="505" y="195" font-family="system-ui, sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">repeats per tool call</text>
+
+  <!-- ===== Legend ===== -->
+  <circle cx="180" cy="555" r="6" fill="#3fb950"/>
+  <circle cx="180" cy="555" r="10" fill="none" stroke="#3fb950" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="198" y="559" font-family="system-ui, sans-serif" font-size="11" fill="#8b949e">Sigil Injection Point</text>
+
+  <circle cx="370" cy="555" r="6" fill="#58a6ff"/>
+  <text x="388" y="559" font-family="system-ui, sans-serif" font-size="11" fill="#8b949e">Session Events</text>
+
+  <circle cx="530" cy="555" r="6" fill="#d29922"/>
+  <text x="548" y="559" font-family="system-ui, sans-serif" font-size="11" fill="#8b949e">Tool Events</text>
+
+  <circle cx="680" cy="555" r="6" fill="#f85149"/>
+  <text x="698" y="559" font-family="system-ui, sans-serif" font-size="11" fill="#8b949e">Termination</text>
+</svg>

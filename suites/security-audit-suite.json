@@ -1,0 +1,25 @@
+{
+  "name": "security-audit-suite",
+  "description": "Multi-agent security audit with scanner, analyst, and reporter",
+  "version": "1.0.0",
+  "roles": {
+    "scanner": {
+      "template": "templates/security-scan.md",
+      "model": "haiku",
+      "tools": ["Read", "Grep", "Glob"],
+      "instructions": "Scan codebase for potential security vulnerabilities. Identify input validation, auth flows, crypto usage, and secrets."
+    },
+    "analyst": {
+      "template": "templates/security-audit.md",
+      "model": "opus",
+      "tools": ["Read", "Grep", "Glob"],
+      "instructions": "Deep analysis of scanner's findings. Classify severity, identify attack vectors, and verify exploitability."
+    },
+    "reporter": {
+      "template": "templates/security-report.md",
+      "model": "sonnet",
+      "tools": ["Write"],
+      "instructions": "Generate structured security report with OWASP classification, severity ratings, and remediation steps."
+    }
+  }
+}

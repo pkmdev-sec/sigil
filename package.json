@@ -1,0 +1,51 @@
+{
+  "name": "sigil",
+  "version": "1.0.0",
+  "description": "RE-powered prompt engineering toolkit for Claude Code",
+  "type": "module",
+  "main": "lib/prompt-assembler.mjs",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": "./lib/prompt-assembler.mjs",
+    "./lib/*": "./lib/*.mjs",
+    "./lib/prompt-assembler": "./lib/prompt-assembler.mjs",
+    "./lib/model-variants": "./lib/model-variants.mjs",
+    "./lib/gate-aware-ab": "./lib/gate-aware-ab.mjs",
+    "./lib/output-style-generator": "./lib/output-style-generator.mjs",
+    "./lib/token-counter": "./lib/token-counter.mjs",
+    "./lib/hook-manager": "./lib/hook-manager.mjs",
+    "./lib/security-analyzer": "./lib/security-analyzer.mjs",
+    "./lib/suite-manager": "./lib/suite-manager.mjs",
+    "./lib/cost-estimator": "./lib/cost-estimator.mjs",
+    "./lib/cache-optimizer": "./lib/cache-optimizer.mjs"
+  },
+  "bin": {
+    "sigil": "./bin/cli.mjs"
+  },
+  "scripts": {
+    "test": "node tests/test-e2e-integration.mjs",
+    "lint": "echo 'No linter configured'",
+    "build": "echo 'No build step required'"
+  },
+  "keywords": [
+    "prompt-engineering",
+    "claude-code",
+    "ai",
+    "llm",
+    "prompt-caching",
+    "system-prompts",
+    "prompt-template",
+    "token-estimation",
+    "ab-testing",
+    "multi-agent"
+  ],
+  "author": "pkmdev-sec",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pkmdev-sec/sigil.git"
+  }
+}

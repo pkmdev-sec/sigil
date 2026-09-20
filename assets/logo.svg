@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" role="img">
+  <title>SIGIL — Prompt Engineering Tool</title>
+  <desc>A geometric sigil symbol representing structured intent — the core concept behind prompt engineering. The design combines an octagonal frame with internal sacred geometry lines forming a channeling pattern, rendered with depth via gradients and shadows.</desc>
+
+  <defs>
+    <!-- Core glow filter for the central sigil -->
+    <filter id="sigilGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle outer shadow for depth -->
+    <filter id="outerShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- Inner glow for the frame -->
+    <filter id="innerGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Background radial gradient — deep space -->
+    <radialGradient id="bgGrad" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="60%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+
+    <!-- Primary frame gradient — indigo to violet -->
+    <linearGradient id="frameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+
+    <!-- Accent gradient — electric cyan -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="50%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#0891B2"/>
+    </linearGradient>
+
+    <!-- Central node gradient — bright core -->
+    <radialGradient id="coreGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E0E7FF"/>
+      <stop offset="40%" stop-color="#A5B4FC"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </radialGradient>
+
+    <!-- Sigil line gradient — indigo to cyan blend -->
+    <linearGradient id="lineGradV" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+
+    <linearGradient id="lineGradH" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+
+    <linearGradient id="lineGradD1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+
+    <linearGradient id="lineGradD2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+
+    <!-- Ring gradient for the outer circle -->
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ==================== BACKGROUND ==================== -->
+  <!-- Dark circular background -->
+  <circle cx="256" cy="256" r="250" fill="url(#bgGrad)"/>
+
+  <!-- Outer ring — subtle containment circle -->
+  <circle cx="256" cy="256" r="240" fill="none" stroke="url(#ringGrad)" stroke-width="1.5"/>
+  <circle cx="256" cy="256" r="235" fill="none" stroke="#4F46E5" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- ==================== OCTAGONAL FRAME ==================== -->
+  <!-- The octagon represents structured containment — the frame of intent -->
+  <g filter="url(#outerShadow)">
+    <!-- Outer octagon -->
+    <polygon
+      points="256,76 358,110 402,198 402,314 358,402 256,436 154,402 110,314 110,198 154,110"
+      fill="none"
+      stroke="url(#frameGrad)"
+      stroke-width="3"
+      stroke-linejoin="round"
+    />
+  </g>
+
+  <!-- Inner octagon — slightly rotated for depth -->
+  <polygon
+    points="256,106 340,134 376,210 376,302 340,378 256,406 172,378 136,302 136,210 172,134"
+    fill="none"
+    stroke="#6366F1"
+    stroke-width="1.5"
+    stroke-linejoin="round"
+    opacity="0.4"
+  />
+
+  <!-- ==================== SIGIL GEOMETRY — THE CORE ==================== -->
+  <!-- Cardinal lines — the channeling paths -->
+  <g filter="url(#innerGlow)">
+    <!-- Vertical axis -->
+    <line x1="256" y1="106" x2="256" y2="406" stroke="url(#lineGradV)" stroke-width="2" opacity="0.7"/>
+    <!-- Horizontal axis -->
+    <line x1="136" y1="256" x2="376" y2="256" stroke="url(#lineGradH)" stroke-width="2" opacity="0.7"/>
+  </g>
+
+  <!-- Diagonal crosses — the binding geometry -->
+  <line x1="172" y1="134" x2="340" y2="378" stroke="url(#lineGradD1)" stroke-width="1.5" opacity="0.5"/>
+  <line x1="340" y1="134" x2="172" y2="378" stroke="url(#lineGradD2)" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Secondary diagonals — octagon vertex connections -->
+  <line x1="136" y1="210" x2="376" y2="302" stroke="#818CF8" stroke-width="1" opacity="0.3"/>
+  <line x1="376" y1="210" x2="136" y2="302" stroke="#818CF8" stroke-width="1" opacity="0.3"/>
+
+  <!-- ==================== INNER DIAMOND ==================== -->
+  <!-- The diamond represents the focused intent at the heart of the sigil -->
+  <polygon
+    points="256,166 326,256 256,346 186,256"
+    fill="none"
+    stroke="url(#accentGrad)"
+    stroke-width="2"
+    stroke-linejoin="round"
+    opacity="0.8"
+  />
+
+  <!-- Inner diamond — tighter focus -->
+  <polygon
+    points="256,196 306,256 256,316 206,256"
+    fill="#06B6D4"
+    fill-opacity="0.08"
+    stroke="#22D3EE"
+    stroke-width="1.5"
+    stroke-linejoin="round"
+    opacity="0.6"
+  />
+
+  <!-- ==================== NODE POINTS ==================== -->
+  <!-- Intersection nodes — where lines of intent cross -->
+
+  <!-- Central node — the brightest point, where all intent converges -->
+  <g filter="url(#sigilGlow)">
+    <circle cx="256" cy="256" r="12" fill="url(#coreGrad)"/>
+    <circle cx="256" cy="256" r="6" fill="#E0E7FF"/>
+    <circle cx="256" cy="256" r="3" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+
+  <!-- Cardinal nodes — top, right, bottom, left -->
+  <circle cx="256" cy="106" r="5" fill="#818CF8" opacity="0.8"/>
+  <circle cx="376" cy="256" r="5" fill="#06B6D4" opacity="0.8"/>
+  <circle cx="256" cy="406" r="5" fill="#06B6D4" opacity="0.8"/>
+  <circle cx="136" cy="256" r="5" fill="#818CF8" opacity="0.8"/>
+
+  <!-- Octagon vertex nodes -->
+  <circle cx="340" cy="134" r="4" fill="#818CF8" opacity="0.6"/>
+  <circle cx="376" cy="210" r="4" fill="#6366F1" opacity="0.6"/>
+  <circle cx="376" cy="302" r="4" fill="#06B6D4" opacity="0.6"/>
+  <circle cx="340" cy="378" r="4" fill="#06B6D4" opacity="0.6"/>
+  <circle cx="172" cy="378" r="4" fill="#06B6D4" opacity="0.6"/>
+  <circle cx="136" cy="302" r="4" fill="#6366F1" opacity="0.6"/>
+  <circle cx="136" cy="210" r="4" fill="#818CF8" opacity="0.6"/>
+  <circle cx="172" cy="134" r="4" fill="#818CF8" opacity="0.6"/>
+
+  <!-- Diamond vertex nodes -->
+  <circle cx="256" cy="166" r="4" fill="#22D3EE" opacity="0.7"/>
+  <circle cx="326" cy="256" r="4" fill="#22D3EE" opacity="0.7"/>
+  <circle cx="256" cy="346" r="4" fill="#22D3EE" opacity="0.7"/>
+  <circle cx="186" cy="256" r="4" fill="#22D3EE" opacity="0.7"/>
+
+  <!-- ==================== ENERGY ARCS ==================== -->
+  <!-- Subtle curved arcs suggesting flow of intent through the sigil -->
+  <path d="M 172,134 Q 256,180 340,134" fill="none" stroke="#818CF8" stroke-width="1" opacity="0.25"/>
+  <path d="M 172,378 Q 256,332 340,378" fill="none" stroke="#06B6D4" stroke-width="1" opacity="0.25"/>
+  <path d="M 136,210 Q 180,256 136,302" fill="none" stroke="#818CF8" stroke-width="1" opacity="0.25"/>
+  <path d="M 376,210 Q 332,256 376,302" fill="none" stroke="#06B6D4" stroke-width="1" opacity="0.25"/>
+
+  <!-- ==================== CORNER GLYPHS ==================== -->
+  <!-- Small decorative marks at the outer octagon midpoints — rune-like accents -->
+
+  <!-- Top -->
+  <line x1="248" y1="78" x2="248" y2="88" stroke="#818CF8" stroke-width="1" opacity="0.4"/>
+  <line x1="264" y1="78" x2="264" y2="88" stroke="#818CF8" stroke-width="1" opacity="0.4"/>
+
+  <!-- Bottom -->
+  <line x1="248" y1="424" x2="248" y2="434" stroke="#06B6D4" stroke-width="1" opacity="0.4"/>
+  <line x1="264" y1="424" x2="264" y2="434" stroke="#06B6D4" stroke-width="1" opacity="0.4"/>
+
+  <!-- Left -->
+  <line x1="108" y1="248" x2="118" y2="248" stroke="#818CF8" stroke-width="1" opacity="0.4"/>
+  <line x1="108" y1="264" x2="118" y2="264" stroke="#818CF8" stroke-width="1" opacity="0.4"/>
+
+  <!-- Right -->
+  <line x1="394" y1="248" x2="404" y2="248" stroke="#06B6D4" stroke-width="1" opacity="0.4"/>
+  <line x1="394" y1="264" x2="404" y2="264" stroke="#06B6D4" stroke-width="1" opacity="0.4"/>
+
+  <!-- ==================== PARTICLE DOTS ==================== -->
+  <!-- Tiny ambient dots suggesting energy dispersal -->
+  <circle cx="200" cy="140" r="1.5" fill="#818CF8" opacity="0.3"/>
+  <circle cx="312" cy="140" r="1.5" fill="#818CF8" opacity="0.3"/>
+  <circle cx="155" cy="340" r="1.5" fill="#06B6D4" opacity="0.3"/>
+  <circle cx="357" cy="340" r="1.5" fill="#06B6D4" opacity="0.3"/>
+  <circle cx="145" cy="180" r="1" fill="#A5B4FC" opacity="0.2"/>
+  <circle cx="367" cy="180" r="1" fill="#A5B4FC" opacity="0.2"/>
+  <circle cx="145" cy="332" r="1" fill="#67E8F9" opacity="0.2"/>
+  <circle cx="367" cy="332" r="1" fill="#67E8F9" opacity="0.2"/>
+</svg>

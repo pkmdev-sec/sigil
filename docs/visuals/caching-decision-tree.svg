@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <defs>
+    <marker id="cd-ag" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#3fb950"/>
+    </marker>
+    <marker id="cd-ao" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#d29922"/>
+    </marker>
+    <marker id="cd-ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#f85149"/>
+    </marker>
+    <marker id="cd-aw" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <!-- Background: PITCH BLACK -->
+  <rect width="900" height="700" fill="#000000"/>
+
+  <!-- Title -->
+  <text x="450" y="40" font-family="system-ui, sans-serif" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">Cache Decision Tree</text>
+
+  <!-- START: Analyze Prompt Section -->
+  <rect x="310" y="65" width="280" height="50" rx="8" fill="#58a6ff" fill-opacity="0.08" stroke="#58a6ff" stroke-width="1"/>
+  <text x="450" y="96" font-family="system-ui, sans-serif" font-size="15" fill="#ffffff" text-anchor="middle">Analyze Prompt Section</text>
+
+  <!-- Arrow: Start → Diamond 1 -->
+  <line x1="450" y1="115" x2="450" y2="155" stroke="#8b949e" stroke-width="1.5" marker-end="url(#cd-aw)"/>
+
+  <!-- DIAMOND 1: Is content static? -->
+  <polygon points="450,160 560,220 450,280 340,220" fill="#58a6ff" fill-opacity="0.05" stroke="#58a6ff" stroke-width="1"/>
+  <text x="450" y="215" font-family="system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Is content</text>
+  <text x="450" y="233" font-family="system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">static?</text>
+
+  <!-- YES branch (right) → Cacheable Prefix -->
+  <line x1="560" y1="220" x2="660" y2="220" stroke="#3fb950" stroke-width="2" marker-end="url(#cd-ag)"/>
+  <text x="610" y="210" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#3fb950" text-anchor="middle">Yes</text>
+
+  <!-- Cacheable Prefix box (right of Diamond 1) -->
+  <rect x="665" y="195" width="190" height="50" rx="8" fill="#3fb950" fill-opacity="0.08" stroke="#3fb950" stroke-width="1"/>
+  <text x="760" y="216" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Cacheable Prefix</text>
+  <text x="760" y="234" font-family="system-ui, sans-serif" font-size="11" fill="#3fb950" text-anchor="middle">$0.30/M tokens</text>
+
+  <!-- NO branch (down) → Diamond 2 -->
+  <line x1="450" y1="280" x2="450" y2="335" stroke="#f85149" stroke-width="2" marker-end="url(#cd-ar)"/>
+  <text x="465" y="310" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f85149">No</text>
+
+  <!-- DIAMOND 2: Changes per session? -->
+  <polygon points="450,340 570,405 450,470 330,405" fill="#d29922" fill-opacity="0.05" stroke="#d29922" stroke-width="1"/>
+  <text x="450" y="398" font-family="system-ui, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">Changes per</text>
+  <text x="450" y="416" font-family="system-ui, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">session?</text>
+
+  <!-- YES branch (right) → Variable Suffix -->
+  <line x1="570" y1="405" x2="660" y2="405" stroke="#d29922" stroke-width="2" marker-end="url(#cd-ao)"/>
+  <text x="615" y="395" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#d29922" text-anchor="middle">Yes</text>
+
+  <!-- Variable Suffix box -->
+  <rect x="665" y="380" width="190" height="50" rx="8" fill="#d29922" fill-opacity="0.08" stroke="#d29922" stroke-width="1"/>
+  <text x="760" y="401" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Variable Suffix</text>
+  <text x="760" y="419" font-family="system-ui, sans-serif" font-size="11" fill="#d29922" text-anchor="middle">$3.00/M tokens</text>
+
+  <!-- NO branch (left) → Cacheable Prefix -->
+  <line x1="330" y1="405" x2="230" y2="405" stroke="#3fb950" stroke-width="2" marker-end="url(#cd-ag)"/>
+  <text x="280" y="395" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#3fb950" text-anchor="middle">No</text>
+
+  <!-- Cacheable Prefix box (left of Diamond 2) -->
+  <rect x="45" y="380" width="190" height="50" rx="8" fill="#3fb950" fill-opacity="0.08" stroke="#3fb950" stroke-width="1"/>
+  <text x="140" y="401" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Cacheable Prefix</text>
+  <text x="140" y="419" font-family="system-ui, sans-serif" font-size="11" fill="#3fb950" text-anchor="middle">$0.30/M tokens</text>
+
+  <!-- ===== COST COMPARISON BOX ===== -->
+  <rect x="175" y="530" width="550" height="140" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#8b949e" stroke-width="1"/>
+
+  <text x="450" y="560" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Cost Impact</text>
+
+  <!-- Uncached -->
+  <rect x="210" y="575" width="220" height="32" rx="5" fill="#f85149" fill-opacity="0.1" stroke="#f85149" stroke-width="1"/>
+  <text x="320" y="596" font-family="system-ui, sans-serif" font-size="14" fill="#f85149" text-anchor="middle">Uncached: $3.00/M</text>
+
+  <!-- Cached -->
+  <rect x="470" y="575" width="220" height="32" rx="5" fill="#3fb950" fill-opacity="0.1" stroke="#3fb950" stroke-width="1"/>
+  <text x="580" y="596" font-family="system-ui, sans-serif" font-size="14" fill="#3fb950" text-anchor="middle">Cached: $0.30/M</text>
+
+  <!-- Divider -->
+  <line x1="250" y1="620" x2="650" y2="620" stroke="#8b949e" stroke-width="1" opacity="0.3"/>
+
+  <!-- Savings -->
+  <text x="450" y="650" font-family="system-ui, sans-serif" font-size="22" font-weight="bold" fill="#3fb950" text-anchor="middle">= 90% Savings</text>
+</svg>

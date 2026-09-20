@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <marker id="ag" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#3fb950"/>
+    </marker>
+    <marker id="ab" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#58a6ff"/>
+    </marker>
+    <marker id="ao" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#d29922"/>
+    </marker>
+    <marker id="ap" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#f85149"/>
+    </marker>
+    <marker id="av" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#bc8cff"/>
+    </marker>
+  </defs>
+
+  <!-- Background: PITCH BLACK -->
+  <rect width="1200" height="900" fill="#000000"/>
+
+  <!-- Title -->
+  <text x="600" y="48" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">SIGIL Architecture</text>
+  <text x="600" y="72" font-family="system-ui, sans-serif" font-size="14" fill="#8b949e" text-anchor="middle">Prompt Engineering Pipeline for Claude Code</text>
+
+  <!-- ===== ROW 1: User Input ===== -->
+  <rect x="500" y="95" width="200" height="55" rx="8" fill="#3fb950" fill-opacity="0.08" stroke="#3fb950" stroke-width="1"/>
+  <text x="600" y="128" font-family="system-ui, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle">User Input</text>
+
+  <!-- Arrow: User Input → Prompt Assembler -->
+  <line x1="600" y1="150" x2="600" y2="188" stroke="#3fb950" stroke-width="2" marker-end="url(#ag)"/>
+
+  <!-- ===== ROW 2: Prompt Assembler ===== -->
+  <rect x="465" y="190" width="270" height="65" rx="8" fill="#3fb950" fill-opacity="0.08" stroke="#3fb950" stroke-width="1"/>
+  <text x="600" y="218" font-family="system-ui, sans-serif" font-size="17" font-weight="bold" fill="#ffffff" text-anchor="middle">Prompt Assembler</text>
+  <text x="600" y="240" font-family="system-ui, sans-serif" font-size="13" fill="#3fb950" text-anchor="middle">10-Section Pipeline</text>
+
+  <!-- Arrows: Prompt Assembler → Processing Row (fan out) -->
+  <line x1="505" y1="255" x2="170" y2="305" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#ab)"/>
+  <line x1="545" y1="255" x2="440" y2="305" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#ab)"/>
+  <line x1="655" y1="255" x2="760" y2="305" stroke="#d29922" stroke-width="1.5" marker-end="url(#ao)"/>
+  <line x1="695" y1="255" x2="1030" y2="305" stroke="#f85149" stroke-width="1.5" marker-end="url(#ap)"/>
+
+  <!-- ===== ROW 3: Processing (4 boxes) ===== -->
+  <!-- Token Counter (blue) -->
+  <rect x="70" y="307" width="200" height="65" rx="8" fill="#58a6ff" fill-opacity="0.08" stroke="#58a6ff" stroke-width="1"/>
+  <text x="170" y="336" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Token Counter</text>
+  <text x="170" y="357" font-family="system-ui, sans-serif" font-size="12" fill="#58a6ff" text-anchor="middle">Budget Tracking</text>
+
+  <!-- Model Variants (blue) -->
+  <rect x="340" y="307" width="200" height="65" rx="8" fill="#58a6ff" fill-opacity="0.08" stroke="#58a6ff" stroke-width="1"/>
+  <text x="440" y="336" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Model Variants</text>
+  <text x="440" y="357" font-family="system-ui, sans-serif" font-size="12" fill="#58a6ff" text-anchor="middle">Opus / Sonnet / Haiku</text>
+
+  <!-- Cache Optimizer (orange) -->
+  <rect x="660" y="307" width="200" height="65" rx="8" fill="#d29922" fill-opacity="0.08" stroke="#d29922" stroke-width="1"/>
+  <text x="760" y="336" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Cache Optimizer</text>
+  <text x="760" y="357" font-family="system-ui, sans-serif" font-size="12" fill="#d29922" text-anchor="middle">Prefix Splitting</text>
+
+  <!-- Security Analyzer (pink) — FULLY VISIBLE with generous padding -->
+  <rect x="930" y="307" width="200" height="65" rx="8" fill="#f85149" fill-opacity="0.08" stroke="#f85149" stroke-width="1"/>
+  <text x="1030" y="336" font-family="system-ui, sans-serif" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle">Security Analyzer</text>
+  <text x="1030" y="357" font-family="system-ui, sans-serif" font-size="12" fill="#f85149" text-anchor="middle">Injection Detection</text>
+
+  <!-- Connector bus line -->
+  <line x1="100" y1="405" x2="1100" y2="405" stroke="#8b949e" stroke-width="1" stroke-dasharray="6,4" opacity="0.3"/>
+
+  <!-- Arrows: Processing → bus -->
+  <line x1="170" y1="372" x2="170" y2="402" stroke="#58a6ff" stroke-width="1.5" opacity="0.5"/>
+  <line x1="440" y1="372" x2="440" y2="402" stroke="#58a6ff" stroke-width="1.5" opacity="0.5"/>
+  <line x1="760" y1="372" x2="760" y2="402" stroke="#d29922" stroke-width="1.5" opacity="0.5"/>
+  <line x1="1030" y1="372" x2="1030" y2="402" stroke="#f85149" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Arrows: bus → Models -->
+  <line x1="300" y1="408" x2="300" y2="438" stroke="#bc8cff" stroke-width="1.5" marker-end="url(#av)"/>
+  <line x1="600" y1="408" x2="600" y2="438" stroke="#bc8cff" stroke-width="1.5" marker-end="url(#av)"/>
+  <line x1="900" y1="408" x2="900" y2="438" stroke="#bc8cff" stroke-width="1.5" marker-end="url(#av)"/>
+
+  <!-- ===== ROW 4: Models (3 boxes) ===== -->
+  <!-- Opus (purple) -->
+  <rect x="200" y="440" width="200" height="60" rx="8" fill="#bc8cff" fill-opacity="0.08" stroke="#bc8cff" stroke-width="1"/>
+  <text x="300" y="467" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Opus</text>
+  <text x="300" y="487" font-family="system-ui, sans-serif" font-size="12" fill="#bc8cff" text-anchor="middle">Max Intelligence</text>
+
+  <!-- Sonnet (purple) -->
+  <rect x="500" y="440" width="200" height="60" rx="8" fill="#bc8cff" fill-opacity="0.08" stroke="#bc8cff" stroke-width="1"/>
+  <text x="600" y="467" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Sonnet</text>
+  <text x="600" y="487" font-family="system-ui, sans-serif" font-size="12" fill="#bc8cff" text-anchor="middle">Balanced</text>
+
+  <!-- Haiku (purple) -->
+  <rect x="800" y="440" width="200" height="60" rx="8" fill="#bc8cff" fill-opacity="0.08" stroke="#bc8cff" stroke-width="1"/>
+  <text x="900" y="467" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Haiku</text>
+  <text x="900" y="487" font-family="system-ui, sans-serif" font-size="12" fill="#bc8cff" text-anchor="middle">Fast &amp; Light</text>
+
+  <!-- Arrows: Models → Cost Estimator -->
+  <line x1="300" y1="500" x2="530" y2="558" stroke="#d29922" stroke-width="1.5" marker-end="url(#ao)"/>
+  <line x1="600" y1="500" x2="600" y2="558" stroke="#d29922" stroke-width="1.5" marker-end="url(#ao)"/>
+  <line x1="900" y1="500" x2="670" y2="558" stroke="#d29922" stroke-width="1.5" marker-end="url(#ao)"/>
+
+  <!-- ===== ROW 5: Cost Estimator ===== -->
+  <rect x="490" y="560" width="220" height="55" rx="8" fill="#d29922" fill-opacity="0.08" stroke="#d29922" stroke-width="1"/>
+  <text x="600" y="593" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Cost Estimator</text>
+
+  <!-- Arrow: Cost Estimator → Output -->
+  <line x1="600" y1="615" x2="600" y2="658" stroke="#3fb950" stroke-width="2" marker-end="url(#ag)"/>
+
+  <!-- ===== ROW 6: Output ===== -->
+  <rect x="455" y="660" width="290" height="65" rx="8" fill="#3fb950" fill-opacity="0.08" stroke="#3fb950" stroke-width="1"/>
+  <text x="600" y="688" font-family="system-ui, sans-serif" font-size="17" font-weight="bold" fill="#ffffff" text-anchor="middle">Output to Claude Code</text>
+  <text x="600" y="710" font-family="system-ui, sans-serif" font-size="13" fill="#3fb950" text-anchor="middle">Optimized Prompt</text>
+
+  <!-- ===== Legend ===== -->
+  <rect x="200" y="790" width="16" height="16" rx="3" fill="#3fb950" fill-opacity="0.3" stroke="#3fb950" stroke-width="1"/>
+  <text x="224" y="803" font-family="system-ui, sans-serif" font-size="13" fill="#8b949e">Main Flow</text>
+
+  <rect x="340" y="790" width="16" height="16" rx="3" fill="#58a6ff" fill-opacity="0.3" stroke="#58a6ff" stroke-width="1"/>
+  <text x="364" y="803" font-family="system-ui, sans-serif" font-size="13" fill="#8b949e">Processing</text>
+
+  <rect x="480" y="790" width="16" height="16" rx="3" fill="#d29922" fill-opacity="0.3" stroke="#d29922" stroke-width="1"/>
+  <text x="504" y="803" font-family="system-ui, sans-serif" font-size="13" fill="#8b949e">Optimization</text>
+
+  <rect x="630" y="790" width="16" height="16" rx="3" fill="#f85149" fill-opacity="0.3" stroke="#f85149" stroke-width="1"/>
+  <text x="654" y="803" font-family="system-ui, sans-serif" font-size="13" fill="#8b949e">Security</text>
+
+  <rect x="760" y="790" width="16" height="16" rx="3" fill="#bc8cff" fill-opacity="0.3" stroke="#bc8cff" stroke-width="1"/>
+  <text x="784" y="803" font-family="system-ui, sans-serif" font-size="13" fill="#8b949e">Model Output</text>
+</svg>

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <marker id="sp-a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#8b949e"/>
+    </marker>
+    <marker id="sp-ag" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#3fb950"/>
+    </marker>
+    <marker id="sp-ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#f85149"/>
+    </marker>
+  </defs>
+
+  <!-- Background: PITCH BLACK -->
+  <rect width="900" height="500" fill="#000000"/>
+
+  <!-- Title -->
+  <text x="450" y="35" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Security Analysis Pipeline</text>
+  <text x="450" y="55" font-family="system-ui, sans-serif" font-size="13" fill="#8b949e" text-anchor="middle">Prompt Injection Detection &amp; Scoring</text>
+
+  <!-- ===== STAGE 1: Template Input ===== -->
+  <rect x="30" y="140" width="140" height="70" rx="8" fill="#58a6ff" fill-opacity="0.08" stroke="#58a6ff" stroke-width="1"/>
+  <text x="100" y="172" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Template</text>
+  <text x="100" y="192" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">Input</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="170" y1="175" x2="200" y2="175" stroke="#8b949e" stroke-width="1.5" marker-end="url(#sp-a)"/>
+
+  <!-- ===== STAGE 2: Injection Check (funnel/filter shape) ===== -->
+  <polygon points="205,135 365,140 355,210 215,205" fill="#f85149" fill-opacity="0.06" stroke="#f85149" stroke-width="1"/>
+  <text x="285" y="168" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Injection</text>
+  <text x="285" y="186" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Check</text>
+  <!-- Example patterns -->
+  <text x="285" y="240" font-family="system-ui, sans-serif" font-size="9" fill="#f85149" text-anchor="middle">ignore previous</text>
+  <text x="285" y="254" font-family="system-ui, sans-serif" font-size="9" fill="#f85149" text-anchor="middle">you are now</text>
+  <text x="285" y="268" font-family="system-ui, sans-serif" font-size="9" fill="#f85149" text-anchor="middle">system override</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="365" y1="175" x2="395" y2="175" stroke="#8b949e" stroke-width="1.5" marker-end="url(#sp-a)"/>
+
+  <!-- ===== STAGE 3: Pattern Scan (funnel shape) ===== -->
+  <polygon points="400,138 550,142 542,208 408,204" fill="#d29922" fill-opacity="0.06" stroke="#d29922" stroke-width="1"/>
+  <text x="475" y="168" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Pattern</text>
+  <text x="475" y="186" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Scan</text>
+  <!-- Example patterns -->
+  <text x="475" y="240" font-family="system-ui, sans-serif" font-size="9" fill="#d29922" text-anchor="middle">{{system}}</text>
+  <text x="475" y="254" font-family="system-ui, sans-serif" font-size="9" fill="#d29922" text-anchor="middle">&lt;|endoftext|&gt;</text>
+  <text x="475" y="268" font-family="system-ui, sans-serif" font-size="9" fill="#d29922" text-anchor="middle">jailbreak patterns</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="555" y1="175" x2="585" y2="175" stroke="#8b949e" stroke-width="1.5" marker-end="url(#sp-a)"/>
+
+  <!-- ===== STAGE 4: Score Calculate (funnel shape) ===== -->
+  <polygon points="590,140 730,143 724,207 596,204" fill="#bc8cff" fill-opacity="0.06" stroke="#bc8cff" stroke-width="1"/>
+  <text x="660" y="168" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Score</text>
+  <text x="660" y="186" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">Calculate</text>
+  <!-- Scoring factors -->
+  <text x="660" y="240" font-family="system-ui, sans-serif" font-size="9" fill="#bc8cff" text-anchor="middle">pattern matches</text>
+  <text x="660" y="254" font-family="system-ui, sans-serif" font-size="9" fill="#bc8cff" text-anchor="middle">severity weights</text>
+  <text x="660" y="268" font-family="system-ui, sans-serif" font-size="9" fill="#bc8cff" text-anchor="middle">confidence level</text>
+
+  <!-- Arrow 4→ outputs (fork) -->
+  <line x1="735" y1="160" x2="785" y2="140" stroke="#3fb950" stroke-width="1.5" marker-end="url(#sp-ag)"/>
+  <line x1="735" y1="190" x2="785" y2="210" stroke="#f85149" stroke-width="1.5" marker-end="url(#sp-ar)"/>
+
+  <!-- ===== OUTPUT: Safe (green) ===== -->
+  <rect x="790" y="115" width="90" height="40" rx="8" fill="#3fb950" fill-opacity="0.12" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="835" y="140" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#3fb950" text-anchor="middle">SAFE</text>
+
+  <!-- ===== OUTPUT: Flagged (red) ===== -->
+  <rect x="790" y="195" width="90" height="40" rx="8" fill="#f85149" fill-opacity="0.12" stroke="#f85149" stroke-width="1.5"/>
+  <text x="835" y="220" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f85149" text-anchor="middle">FLAGGED</text>
+
+  <!-- ===== SAFETY SCORE GAUGE ===== -->
+  <text x="450" y="340" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">Safety Score</text>
+
+  <!-- Gauge background bar -->
+  <rect x="200" y="360" width="500" height="24" rx="12" fill="#ffffff" fill-opacity="0.05" stroke="#8b949e" stroke-width="1"/>
+
+  <!-- Gauge fill (showing score of 85/100 = safe) -->
+  <rect x="200" y="360" width="425" height="24" rx="12" fill="#3fb950" fill-opacity="0.3"/>
+
+  <!-- Gauge tick marks -->
+  <line x1="200" y1="390" x2="200" y2="398" stroke="#8b949e" stroke-width="1"/>
+  <text x="200" y="412" font-family="system-ui, sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">0</text>
+
+  <line x1="325" y1="390" x2="325" y2="398" stroke="#8b949e" stroke-width="1"/>
+  <text x="325" y="412" font-family="system-ui, sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">25</text>
+
+  <line x1="450" y1="390" x2="450" y2="398" stroke="#8b949e" stroke-width="1"/>
+  <text x="450" y="412" font-family="system-ui, sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">50</text>
+
+  <line x1="575" y1="390" x2="575" y2="398" stroke="#8b949e" stroke-width="1"/>
+  <text x="575" y="412" font-family="system-ui, sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">75</text>
+
+  <line x1="700" y1="390" x2="700" y2="398" stroke="#8b949e" stroke-width="1"/>
+  <text x="700" y="412" font-family="system-ui, sans-serif" font-size="10" fill="#8b949e" text-anchor="middle">100</text>
+
+  <!-- Threshold line at 70 (dangerous below) -->
+  <line x1="550" y1="355" x2="550" y2="389" stroke="#d29922" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="550" y="350" font-family="system-ui, sans-serif" font-size="9" fill="#d29922" text-anchor="middle">THRESHOLD</text>
+
+  <!-- Current score indicator -->
+  <circle cx="625" cy="372" r="8" fill="#3fb950" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="625" y="440" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#3fb950" text-anchor="middle">Score: 85 — SAFE</text>
+
+  <!-- Zone labels -->
+  <text x="350" y="470" font-family="system-ui, sans-serif" font-size="10" fill="#f85149" text-anchor="middle">DANGER (0-50)</text>
+  <text x="500" y="470" font-family="system-ui, sans-serif" font-size="10" fill="#d29922" text-anchor="middle">CAUTION (50-70)</text>
+  <text x="650" y="470" font-family="system-ui, sans-serif" font-size="10" fill="#3fb950" text-anchor="middle">SAFE (70-100)</text>
+</svg>

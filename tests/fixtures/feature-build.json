@@ -1,0 +1,27 @@
+{
+  "name": "feature-build",
+  "description": "Self-contained integration fixture for a multi-agent feature workflow",
+  "version": "1.0.0",
+  "roles": {
+    "coordinator": {
+      "template": "Plan the feature, assign work, and integrate verified results.",
+      "model": "claude-opus-4",
+      "dependsOn": []
+    },
+    "researcher": {
+      "template": "Inspect the codebase and report relevant constraints and patterns.",
+      "model": "claude-sonnet-4",
+      "dependsOn": []
+    },
+    "implementer": {
+      "template": "Implement the requested feature using the research findings.",
+      "model": "claude-sonnet-4",
+      "dependsOn": ["researcher"]
+    },
+    "tester": {
+      "template": "Test the implementation and report failures with evidence.",
+      "model": "claude-sonnet-4",
+      "dependsOn": ["implementer"]
+    }
+  }
+}
